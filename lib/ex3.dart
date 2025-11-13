@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum Product {
+enum ProductType {
   dart('DART', 'the best object language', 'assets/ex3/dart.png'),
   flutter(
     'FLUTTER',
@@ -13,7 +13,7 @@ enum Product {
   final String description;
   final String image;
 
-  const Product(this.title, this.description, this.image);
+  const ProductType(this.title, this.description, this.image);
 }
 
 void main() {
@@ -29,9 +29,9 @@ void main() {
               spacing: 20,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                MyCard(product: Product.dart),
-                MyCard(product: Product.flutter),
-                MyCard(product: Product.firebase),
+                MyCard(product: ProductType.dart),
+                MyCard(product: ProductType.flutter),
+                MyCard(product: ProductType.firebase),
               ],
             ),
           ),
@@ -42,7 +42,7 @@ void main() {
 }
 
 class MyCard extends StatelessWidget {
-  final Product product;
+  final ProductType product;
 
   const MyCard({super.key, required this.product});
 
